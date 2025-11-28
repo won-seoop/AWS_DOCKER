@@ -1,16 +1,10 @@
-version: "1.0"
 
 services:
   fe:
     image: ${IMAGE}
     pull_policy: always
-    networks:
-      - infra
     ports:
       - "3000:3000"
 
 
-networks:
-  infra:
-    external: true
 

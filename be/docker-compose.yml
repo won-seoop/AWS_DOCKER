@@ -5,17 +5,12 @@ services:
     image: ${IMAGE}
     container_name: be
     pull_policy: always
-    networks:
-      - infra
+    
     ports:
       - "8080:8080"
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/${MYSQL_DATABASE}
-      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_URL: jdbc:mysql://${RDS_DNS}/${MYSQL_DATABASE}
+      SPRING_DATASOURCE_USERNAME: admin
       SPRING_DATASOURCE_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       SPRING_JPA_HIBERNATE_DDL_AUTO: none
-
-networks:
-  infra:
-    external: true
 

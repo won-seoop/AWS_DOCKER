@@ -1,7 +1,7 @@
 
 services:
   fe:
-    image: ${IMAGE}
+    image: wonseoop/hackton-fe:1.0.0
     pull_policy: always
     ports:
       - "3000:3000"

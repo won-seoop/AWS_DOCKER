@@ -1,10 +1,10 @@
+version: '3.8'
 
 services:
-  fe:
-    image: wonseoop/hackton-fe:1.0.0
-    pull_policy: always
+  app:
+    image: wonseoop/hackton-FaseAPI:1.0.0
     ports:
-      - "3000:3000"
-
+      - "8000:8000"
+    restart: unless-stopped
 
 
